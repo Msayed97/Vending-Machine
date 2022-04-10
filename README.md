@@ -1,9 +1,10 @@
 # Vending Machine 
 
 ## How to run 
-1. clone reposatory into your local machine
-2. install docker , docker-compose
-3. execute the following command : docker-compose up --build -d 
+1. Clone this repository into your local machine.
+2. Install docker, docker-compose.
+3. Execute the following command --> docker-compose up --build -d 
+4. Send http requests to localhost:4000
 
 
 ## Assumptions
