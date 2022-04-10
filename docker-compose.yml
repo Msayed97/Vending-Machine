@@ -21,7 +21,7 @@ services:
       - db
     ports:
       - '4000:4000'
-    command: sh -c "dockerize -wait tcp://db:5432 -timeout 300s -wait-retry-interval 30s /usr/src/app/start.sh"
+    command: sh -c "dockerize -wait tcp://db:5432 -timeout 300s -wait-retry-interval 30s sh /usr/src/app/start.sh"
 volumes:
   pg:
 
