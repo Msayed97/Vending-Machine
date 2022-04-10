@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_USER: postgres
+      POSTGRES_DB: challenge
+    volumes:
+      - 'pg:/var/lib/postgresql/data'
+    ports:
+      - '5433:5432'
+  server:
+    build: .
+    image: 'challenge:latest'
+    container_name: challenge
+    environment:
+      DB_PORT: 5432
+      HOST: db
+    depends_on:
+      - db
+    ports:
+      - '4000:4000'
+    command: sh -c "dockerize -wait tcp://db:5432 -timeout 300s -wait-retry-interval 30s /usr/src/app/start.sh"
+volumes:
+  pg:
+
+

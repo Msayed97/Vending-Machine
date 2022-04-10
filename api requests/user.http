@@ -1,0 +1,53 @@
+
+@buyer = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU4NDA5NDlmLTZkOGMtNDE2Zi1hMmU1LWRjMDNjMmNkNTAyNSIsInJvbGUiOiJCdXllciIsInVzZXJuYW1lIjoibW9oYW1tZWQgc2F5ZWQgYiIsImlhdCI6MTY0OTYxNjY2MywiZXhwIjoxNjQ5NjIwMjYzfQ.Wbd9icvwCdDpr2Jm6aRxzTwE-MjcDN6azvxSvMpJRug
+@seller = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU4NDA5NDlmLTZkOGMtNDE2Zi1hMmU1LWRjMDNjMmNkNTAyNSIsInJvbGUiOiJCdXllciIsInVzZXJuYW1lIjoibW9oYW1tZWQgc2F5ZWQgYiIsImlhdCI6MTY0OTYxNjY2MywiZXhwIjoxNjQ5NjIwMjYzfQ.Wbd9icvwCdDpr2Jm6aRxzTwE-MjcDN6azvxSvMpJRug
+
+### create user ####
+Post http://localhost:4000/api/user
+Content-Type: application/json
+
+
+{
+        "username":"mohammed sayed s",
+        "password":"123456789",
+        "role":"Seller"
+}
+
+
+###get user###
+Get http://localhost:4000/api/user
+Authorization: Bearer {{buyer}}
+
+
+###delete user###
+DELETE  http://localhost:4000/api/user
+Content-Type: application/json
+Authorization: Bearer {{buyer}}
+
+###update user ###
+PATCH  http://localhost:4000/api/user
+Content-Type: application/json
+Authorization: Bearer {{buyer}}
+
+
+{
+        "username":"mohammed sayed b"
+}
+
+###deposit some coins ###
+POST  http://localhost:4000/api/user/deposit
+Content-Type: application/json
+Authorization: Bearer {{buyer}}
+
+
+{
+        "coins":{
+                "5":5,
+                "10":3
+        }
+}
+###rest coins ###
+POST  http://localhost:4000/api/user/reset
+Content-Type: application/json
+Authorization: Bearer {{buyer}}
+

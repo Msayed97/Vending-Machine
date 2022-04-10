@@ -1,0 +1,16 @@
+###login###
+Post http://localhost:4000/api/login
+Content-Type: application/json
+
+
+{
+        "username":"mohammed sayed s",
+        "password":"123456789"
+}
+
+###get new access token with refresh token###
+GET  http://localhost:4000/api/refresh
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwNGZkZmI3LTIwMGMtNGFmZi04YzM5LWYwYjQ2NTE5MzdiNCIsInJvbGUiOiJTZWxsZXIiLCJ1c2VybmFtZSI6Im1vaGFtbWVkIHNheWVkNSIsImlhdCI6MTY0OTQ4NTQ2NywiZXhwIjoxNjQ5NDg5MDY3fQ.yd4rceK_LcQdcx9RSphkflr0U3qykViY9CpIRPZ6Adw
+
+

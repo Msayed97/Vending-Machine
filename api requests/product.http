@@ -1,0 +1,49 @@
+@seller = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUzYTc5YTI4LTFjNTQtNGY3YS05YzA2LTBjYjhiYWY3NTE2YyIsInJvbGUiOiJTZWxsZXIiLCJ1c2VybmFtZSI6Im1vaGFtbWVkIHNheWVkIHMiLCJpYXQiOjE2NDk2MTY3ODUsImV4cCI6MTY0OTYyMDM4NX0.xKPE3XS5QZsrGO2UdkCujnWgCaT_Kc711M5zs41XEKk
+@buyer = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU4NDA5NDlmLTZkOGMtNDE2Zi1hMmU1LWRjMDNjMmNkNTAyNSIsInJvbGUiOiJCdXllciIsInVzZXJuYW1lIjoibW9oYW1tZWQgc2F5ZWQgYiIsImlhdCI6MTY0OTYxNjY2MywiZXhwIjoxNjQ5NjIwMjYzfQ.Wbd9icvwCdDpr2Jm6aRxzTwE-MjcDN6azvxSvMpJRug
+
+@product_id = 3c4f12cf-deca-4c53-8566-940cb86de118
+### create product ####
+Post http://localhost:4000/api/product
+Content-Type: application/json
+Authorization: Bearer {{seller}}
+
+{
+        "name":"pepsi",
+        "amount":"2",
+        "cost":"12"
+}
+
+### get products ####
+GET http://localhost:4000/api/product
+Content-Type: application/json
+
+### get product ####
+GET http://localhost:4000/api/product/{{product_id}}
+Content-Type: application/json
+
+
+### update product ####
+PATCH http://localhost:4000/api/product/{{product_id}}
+Content-Type: application/json
+Authorization: Bearer {{seller}}
+
+{
+        "name":"pepsi2",
+        "amount":"10",
+        "cost":"10"
+}
+
+### delete product ####
+DELETE http://localhost:4000/api/product/{{product_id}}
+Content-Type: application/json
+Authorization: Bearer {{seller}}
+
+### buy product ####
+POST http://localhost:4000/api/product/{{product_id}}/buy
+Content-Type: application/json
+Authorization: Bearer {{buyer}}
+
+
+{
+        "amount":"1"
+}
